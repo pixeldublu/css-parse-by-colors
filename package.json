@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pixeldublu/js-CSSparseByColors.git"
+    "url": "git+https://github.com/pixeldublu/css-parse-by-colors.git"
   },
   "keywords": [
     "css",
@@ -21,9 +21,9 @@
   "author": "pixeldublu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pixeldublu/js-CSSparseByColors/issues"
+    "url": "https://github.com/pixeldublu/css-parse-by-colors/issues"
   },
-  "homepage": "https://github.com/pixeldublu/js-CSSparseByColors#readme",
+  "homepage": "https://github.com/pixeldublu/css-parse-by-colors#readme",
   "dependencies": {
     "minimist": "^1.2.0"
   }
