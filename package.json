@@ -1,0 +1,30 @@
+{
+  "name": "css-parse-by-colors",
+  "version": "1.0.0",
+  "description": "Parse elements that contain specific color(s)",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixeldublu/js-CSSparseByColors.git"
+  },
+  "keywords": [
+    "css",
+    "skin",
+    "theme",
+    "coloring",
+    "nodejs",
+    "js"
+  ],
+  "author": "pixeldublu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixeldublu/js-CSSparseByColors/issues"
+  },
+  "homepage": "https://github.com/pixeldublu/js-CSSparseByColors#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}

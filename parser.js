@@ -1,13 +1,22 @@
 var fs = require('fs');
 var _ = require('lodash');
+var minimist = require('minimist');
 
-var cssFile = 'nli.css';
-var newCssFile = '_' + cssFile;
+var argv = minimist(process.argv);
+
+if (!argv.f || !argv.n || !argv.c) {
+    console.log('Usage: node parser.js -f <fileName.css> -n <newFileName.css> -c <colors> (colors in hex format and comma separated)');
+    console.log('Example: node parser.js -f theme.css -n colors.css -c #FFFFFF,#F2F2F2,#000000');
+    process.exit()
+}
+
+var cssFile = argv.f;
+var newCssFile = argv.n;
 var cssFileContent = '';
 
-let colors = ['FFC107', 'FFA000'];
+let colors = _.split(argv.c, ',');
 
-const regexMedia = /(@[^{]+\{)([\s\S]+?})\s*}/gi;
+const regexMedia = /(@[^{]+{)([\s\S]+?})\s*}/gi;
 const regexSelectors = '((.|,\n)*\{)([^\}|\{]*)\}';
 const regexColors = '(^([^\\n]*)(' + _.join(colors, '|') + ')([^\\n]*)$)';
 
@@ -18,7 +27,8 @@ fs.readFile(cssFile, 'utf8', function (err, content) {
     content = content.replace(regexMedia, '');
     cssFileContent += processSelectors(content);
     cssFileContent += processMedias(medias);
-    fs.writeFile('_' + cssFile, cssFileContent, function(err) {
+    fs.writeFile(newCssFile, cssFileContent, function (err) {
+        if (err) console.error(err);
         console.log('=========== DONE =========== ');
     });
 });
@@ -85,4 +95,4 @@ var filterColors = function (content) {
         }
     });
     return (colorsContent !== '') ? colorsContent : false;
-}
+};
