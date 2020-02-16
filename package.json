@@ -1,5 +1,5 @@
 {
-  "name": "jnodejs-tool-css-theme-generator",
+  "name": "nodejs-tool-css-theme-generator",
   "version": "1.0.0",
   "description": "Parse elements that contain specific color(s)",
   "main": "parser.js",
