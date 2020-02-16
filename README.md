@@ -1,4 +1,5 @@
-# css-parse-by-colors
+# CSS Theme Generator
+
 Usefull for creating color themes without the need to copy all css.
 
 Usage: node parser.js -f <fileName.css> -n <newFileName.css> -c <colors> (colors in hex format and comma separated)
